@@ -1,0 +1,35 @@
+puts "Please give me an number array(separated by space, finish by enter twice):"
+x = [ ]
+loop do
+  input = gets.chomp
+  break if input.empty?
+  x += input.split.map{ |x| x.to_i }
+end
+x.sort!
+puts x.inspect
+
+puts "Which number you want to find?"
+y = gets.chomp.to_i
+first = 0
+last = x.count - 1
+mid = (x[first..last].count.to_f/2).ceil
+z = x[mid-1].to_i
+counter = 1
+
+while y != z
+  puts "mid: #{mid}, Y: #{y}, Z: #{z}, "
+  counter += 1
+  if y < z
+    last = mid
+    mid = mid - (x[first..last].count/2).ceil
+    z = x[mid]
+    puts "x[mid] = #{x[mid]}"
+  else
+    first = mid
+    mid = mid + (x[first..last].count.to_f/2).ceil
+    z = x[mid-1]
+    puts "x[mid-1] = #{x[mid-1]}"
+  end
+end
+
+puts "needs #{counter} steps."
