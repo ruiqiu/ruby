@@ -1,0 +1,25 @@
+x = [23423,333,1,2,3,555,999999988,37]
+y = 1
+
+
+while y > 0 and y < x.count
+  z = y - 1
+  puts 
+  puts "now y is #{y}, and z is #{z} "
+  
+  while z >= 0 and z < y
+    puts "...now y is #{y}, and z is #{z} "
+    if x[z+1] < x[z]
+      x.insert(z, x[z+1])
+	  x.delete_at(z+2)
+    puts "new array is #{x}"
+    else
+    puts "still old array #{x}"
+    end
+    z -= 1
+  end
+
+  y += 1
+end
+
+puts "the final is #{x}"
