@@ -1,0 +1,21 @@
+x = [3, 6, 7, 10, 1, 5]
+y = 1
+z = 0
+while z >= 0 and z < x.count
+	puts
+	puts "now z is #{z}"
+    while y > 0 and y < x.count
+  	  puts "now y is #{y}"
+	  if x[y] < x[z]
+		x.insert(z, x.delete_at(y))
+		puts "new array is #{x}"
+	  else
+		puts "still the same, #{x}"
+	  end
+	  y += 1
+    end
+    z += 1
+    y = z + 1
+end
+
+puts "finally x is #{x}"
