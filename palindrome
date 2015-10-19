@@ -1,0 +1,16 @@
+x = "abcfedcba"
+y = x.split("")
+z = 0
+total = y.count
+while z >= 0 and z < total/2
+	puts
+	puts "left is #{y[z]}, and right is #{y[total-z-1]}"
+	if y[z] != y[total-z-1] 
+		puts " it is not palindrome"
+		abort
+	else
+		z += 1
+	end
+end
+
+puts "it is palindrome"
