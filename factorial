@@ -1,0 +1,12 @@
+def factorial(y)
+	z = 1
+	while y > 0
+		z = z * y
+		y -= 1
+	end
+	puts z
+	return z
+
+end
+
+factorial(5)
